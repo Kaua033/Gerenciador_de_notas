@@ -1,5 +1,8 @@
 package gerador.denotas.repository;
 
-public interface UnidadeRepository {
+import gerador.denotas.entity.Nota;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface UnidadeRepository  extends JpaRepository<UnidadeRepository, Long> {
 
 }

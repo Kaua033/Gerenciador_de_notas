@@ -1,5 +1,9 @@
 package gerador.denotas.repository;
 
-public interface TurmaDisciplinaProfessorRepository {
+import gerador.denotas.entity.Disciplina;
+import gerador.denotas.entity.TurmaDisciplinaProfessor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface TurmaDisciplinaProfessorRepository extends JpaRepository<TurmaDisciplinaProfessor, Long> {
 
 }

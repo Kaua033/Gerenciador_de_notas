@@ -1,5 +1,9 @@
 package gerador.denotas.repository;
 
-public interface ProfessorRepository {
+import gerador.denotas.entity.Disciplina;
+import gerador.denotas.entity.Professor;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface ProfessorRepository  extends JpaRepository<Professor, Long> {
 
 }

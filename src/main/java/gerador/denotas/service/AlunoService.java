@@ -3,18 +3,18 @@ package gerador.denotas.service;
 import gerador.denotas.entity.Aluno;
 import gerador.denotas.repository.AlunoRepository;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
-
+@Service
 public class AlunoService {
 
-private  Aluno aluno;
-private AlunoRepository alunoRepository;
 
-    public AlunoService(Aluno aluno, AlunoRepository alunoRepository) {
-        this.aluno = aluno;
+    private AlunoRepository alunoRepository;
+
+    public AlunoService(AlunoRepository alunoRepository) {
         this.alunoRepository = alunoRepository;
     }
 
