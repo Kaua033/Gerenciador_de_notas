@@ -1,4 +1,3 @@
-
 CREATE TYPE role_usuario AS ENUM ('PROFESSOR', 'ALUNO', 'RESPONSAVEL');
 CREATE TYPE situacao_final AS ENUM ('APROVADO', 'RECUPERACAO', 'REPROVADO', 'CURSANDO');
 
@@ -21,9 +20,17 @@ CREATE TABLE aluno (
     id SERIAL PRIMARY KEY,
     usuario_id INT UNIQUE REFERENCES usuario(id) ON DELETE SET NULL,
     turma_id INT NOT NULL REFERENCES turma(id) ON DELETE RESTRICT,
-    nome VARCHAR(150) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    sobrenome VARCHAR(100) NOT NULL,
     matricula VARCHAR(30) UNIQUE NOT NULL,
     data_nascimento DATE,
+    telefone VARCHAR(20),
+    email VARCHAR(150),
+    foto_url VARCHAR(255),
+    nome_pai VARCHAR(150),
+    telefone_pai VARCHAR(20),
+    nome_mae VARCHAR(150),
+    telefone_mae VARCHAR(20),
     criado_em TIMESTAMP NOT NULL DEFAULT NOW()
 );
 

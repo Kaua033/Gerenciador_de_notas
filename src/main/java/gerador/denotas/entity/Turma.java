@@ -29,4 +29,29 @@ public class Turma {
 
 	@Column(name = "ano_letivo", nullable = false)
 	private Integer anoLetivo;
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setAnoLetivo(Integer anoLetivo) {
+		this.anoLetivo = anoLetivo;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public Integer getAnoLetivo() {
+		return anoLetivo;
+	}
 }

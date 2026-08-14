@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Entrar · Denotas</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+	<style>
+		:root {
+          --azul-escuro: #14328c;
+          --azul: #1e40af;
+          --azul-claro: #eaf1fc;
+          --vermelho: #d92d2d;
+          --texto: #1c1f2a;
+          --texto-suave: #6b7280;
+          --borda: #e2e6f0;
+          --fundo: #f4f6fb;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+          font-family: 'Inter', sans-serif;
+          background: var(--fundo);
+          color: var(--texto);
+        }
+
+        #login-screen {
+          min-height: 100vh;
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        .login-left {
+          background: var(--azul-escuro);
+          color: #fff;
+          padding: 48px;
+          display: flex;
+          flex-direction: column;
+        }
+
+        .brand {
+          display: flex;
+          align-items: center;
+          gap: 10px;
+          margin-bottom: 48px;
+        }
+
+        .brand .icon {
+          width: 36px;
+          height: 36px;
+          background: #fff;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 18px;
+        }
+
+        .brand span {
+          font-weight: 700;
+          font-size: 13px;
+          letter-spacing: 0.08em;
+          text-transform: uppercase;
+        }
+
+        .login-left h1 {
+          font-family: 'Poppins', sans-serif;
+          font-size: 34px;
+          font-weight: 700;
+          line-height: 1.2;
+          margin-bottom: 12px;
+        }
+
+        .login-left .subtitulo {
+          color: #b9c8f0;
+          font-size: 14px;
+          margin-bottom: 32px;
+        }
+
+        .ilustracao {
+          background: #f4f0e4;
+          border-radius: 16px;
+          height: 260px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 64px;
+          margin-bottom: 32px;
+        }
+
+        .quote {
+          margin-top: auto;
+          border-left: 3px solid var(--vermelho);
+          padding-left: 16px;
+          font-size: 14px;
+          font-style: italic;
+          color: #d7e0f7;
+        }
+
+        .quote strong {
+          display: block;
+          margin-top: 10px;
+          font-style: normal;
+          font-weight: 700;
+          color: #fff;
+        }
+
+        .login-right {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          padding: 48px;
+        }
+
+        .login-form {
+          width: 100%;
+          max-width: 360px;
+          text-align: center;
+        }
+
+        .login-form .circle-icon {
+          width: 64px;
+          height: 64px;
+          border-radius: 50%;
+          background: var(--azul-claro);
+          border: 2px solid var(--azul);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 26px;
+          margin: 0 auto 20px;
+        }
+
+        .login-form h2 {
+          font-family: 'Poppins', sans-serif;
+          font-size: 22px;
+          font-weight: 700;
+          margin-bottom: 6px;
+        }
+
+        .login-form .desc {
+          font-size: 13px;
+          color: var(--texto-suave);
+          margin-bottom: 28px;
+        }
+
+        .campo {
+          text-align: left;
+          margin-bottom: 18px;
+        }
+
+        .campo label {
+          display: block;
+          font-size: 12px;
+          font-weight: 600;
+          color: var(--texto-suave);
+          margin-bottom: 6px;
+        }
+
+        .input-wrap {
+          position: relative;
+        }
+
+        .input-wrap input {
+          width: 100%;
+          border: 1px solid var(--borda);
+          background: #fff;
+          border-radius: 10px;
+          padding: 12px 14px;
+          font-size: 14px;
+          font-family: 'Inter', sans-serif;
+        }
+
+        .input-wrap input:focus {
+          outline: none;
+          border-color: var(--azul);
+        }
+
+        .btn-entrar {
+          width: 100%;
+          background: var(--azul-escuro);
+          color: #fff;
+          border: none;
+          border-radius: 10px;
+          padding: 14px;
+          font-family: 'Poppins', sans-serif;
+          font-weight: 700;
+          font-size: 14px;
+          cursor: pointer;
+          margin-top: 8px;
+        }
+
+        .btn-entrar:hover { background: var(--azul); }
+
+        .erro-msg {
+          background: #fdeaea;
+          color: var(--vermelho);
+          border: 1px solid #f6c6c6;
+          border-radius: 10px;
+          padding: 10px 14px;
+          font-size: 12.5px;
+          margin-bottom: 16px;
+          text-align: left;
+        }
+
+        .info-msg {
+          background: #e7f6ec;
+          color: #1a7a4c;
+          border: 1px solid #bfe3cd;
+          border-radius: 10px;
+          padding: 10px 14px;
+          font-size: 12.5px;
+          margin-bottom: 16px;
+          text-align: left;
+        }
+
+        .credenciais-teste {
+          margin-top: 18px;
+          background: var(--azul-claro);
+          border-radius: 10px;
+          padding: 10px 14px;
+          font-size: 12px;
+          color: var(--azul);
+          text-align: left;
+        }
+
+        .rodape {
+          margin-top: 28px;
+          font-size: 11px;
+          color: var(--texto-suave);
+          text-align: center;
+        }
+
+        @media (max-width: 800px) {
+          #login-screen { grid-template-columns: 1fr; }
+          .login-left { min-height: 320px; }
+        }
+	</style>
+</head>
+<body>
+
+<div id="login-screen">
+	<div class="login-left">
+		<div class="brand">
+			<div class="icon">&#127891;</div>
+			<span>Portal do Aluno</span>
+		</div>
+		<h1>Colégio Anísio Honorato Godoy</h1>
+		<div class="subtitulo">Secretaria da Educação · Governo da Bahia</div>
+		<div class="ilustracao">&#128218;</div>
+		<div class="quote">
+			"Só existirá democracia no Brasil no dia em que se montar no país a máquina que prepara as democracias. Essa máquina é a escola pública."
+			<strong>Anísio Teixeira</strong>
+		</div>
+	</div>
+
+	<div class="login-right">
+		<form class="login-form" th:action="@{/login}" method="post">
+			<div class="circle-icon">&#128214;</div>
+			<h2>Acesse sua conta</h2>
+			<div class="desc">Insira suas credenciais institucionais para entrar</div>
+
+			<div class="erro-msg" th:if="${param.error}">Matrícula ou senha incorretos. Verifique e tente novamente.</div>
+			<div class="info-msg" th:if="${param.logout}">Você saiu do sistema com sucesso.</div>
+
+			<div class="campo">
+				<label for="matricula">Matrícula (Nº de registro)</label>
+				<div class="input-wrap">
+					<input type="text" id="matricula" name="username" placeholder="Ex: 202610928" autofocus>
+				</div>
+			</div>
+
+			<div class="campo">
+				<label for="senha">Senha de acesso</label>
+				<div class="input-wrap">
+					<input type="password" id="senha" name="password" placeholder="Digite sua senha">
+				</div>
+			</div>
+
+			<button class="btn-entrar" type="submit">Entrar no sistema</button>
+
+			<div class="credenciais-teste">
+				Credenciais de teste — matrícula: <strong>202610928</strong> · senha: <strong>aluno123</strong>
+			</div>
+
+			<div class="rodape">Secretaria da Educação · Governo do Estado da Bahia<br>SGE · Sistema de Gestão Escolar v4.12.0</div>
+		</form>
+	</div>
+</div>
+
+</body>
+</html>
