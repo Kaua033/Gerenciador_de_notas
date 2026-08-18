@@ -70,4 +70,68 @@ public class Nota {
 			lancadoEm = LocalDateTime.now();
 		}
 	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setAluno(Aluno aluno) {
+		this.aluno = aluno;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public void setUnidade(Unidade unidade) {
+		this.unidade = unidade;
+	}
+
+	public void setValor(BigDecimal valor) {
+		this.valor = valor;
+	}
+
+	public void setObservacao(String observacao) {
+		this.observacao = observacao;
+	}
+
+	public void setLancadoPor(Professor lancadoPor) {
+		this.lancadoPor = lancadoPor;
+	}
+
+	public void setLancadoEm(LocalDateTime lancadoEm) {
+		this.lancadoEm = lancadoEm;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public Aluno getAluno() {
+		return aluno;
+	}
+
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public Unidade getUnidade() {
+		return unidade;
+	}
+
+	public BigDecimal getValor() {
+		return valor;
+	}
+
+	public String getObservacao() {
+		return observacao;
+	}
+
+	public Professor getLancadoPor() {
+		return lancadoPor;
+	}
+
+	public LocalDateTime getLancadoEm() {
+		return lancadoEm;
+	}
 }
