@@ -45,4 +45,44 @@ public class TurmaDisciplinaProfessor {
 
 	@Column(name = "ano_letivo", nullable = false)
 	private Integer anoLetivo;
+
+	public Long getId() {
+		return id;
+	}
+
+	public Turma getTurma() {
+		return turma;
+	}
+
+	public Disciplina getDisciplina() {
+		return disciplina;
+	}
+
+	public Professor getProfessor() {
+		return professor;
+	}
+
+	public Integer getAnoLetivo() {
+		return anoLetivo;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setTurma(Turma turma) {
+		this.turma = turma;
+	}
+
+	public void setDisciplina(Disciplina disciplina) {
+		this.disciplina = disciplina;
+	}
+
+	public void setProfessor(Professor professor) {
+		this.professor = professor;
+	}
+
+	public void setAnoLetivo(Integer anoLetivo) {
+		this.anoLetivo = anoLetivo;
+	}
 }

@@ -43,4 +43,52 @@ public class Unidade {
 
 	@Column(name = "data_fim")
 	private LocalDate dataFim;
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public Short getOrdem() {
+		return ordem;
+	}
+
+	public Integer getAnoLetivo() {
+		return anoLetivo;
+	}
+
+	public LocalDate getDataInicio() {
+		return dataInicio;
+	}
+
+	public LocalDate getDataFim() {
+		return dataFim;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setOrdem(Short ordem) {
+		this.ordem = ordem;
+	}
+
+	public void setAnoLetivo(Integer anoLetivo) {
+		this.anoLetivo = anoLetivo;
+	}
+
+	public void setDataInicio(LocalDate dataInicio) {
+		this.dataInicio = dataInicio;
+	}
+
+	public void setDataFim(LocalDate dataFim) {
+		this.dataFim = dataFim;
+	}
 }

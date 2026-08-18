@@ -42,4 +42,36 @@ public class Professor {
 			criadoEm = LocalDateTime.now();
 		}
 	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setRegistro(String registro) {
+		this.registro = registro;
+	}
+
+	public void setCriadoEm(LocalDateTime criadoEm) {
+		this.criadoEm = criadoEm;
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public String getNome() {
+		return nome;
+	}
+
+	public String getRegistro() {
+		return registro;
+	}
+
+	public LocalDateTime getCriadoEm() {
+		return criadoEm;
+	}
 }
